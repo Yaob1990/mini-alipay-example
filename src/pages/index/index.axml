@@ -1,0 +1,9 @@
+<view>
+  <waterflow-list ref='saveComponentLoadData' onGetData="getListData">
+    <view slot="item" slot-scope="props">
+      <block a:for="{{props.list}}">
+        <view>{{item.num}}</view>
+      </block>
+    </view>
+  </waterflow-list>
+</view>

@@ -1,0 +1,18 @@
+<view>
+  <slot name="item" list="{{list}}"></slot>
+  <slot name="empty" a:if="{{init && !totalNum}}">
+    <view>暂无数据</view>
+  </slot>
+  <slot name="loading" a:if="{{init && !finished}}">
+    <view class="loading">
+      <view class="text">加载中...</view>
+    </view>
+  </slot>
+  <slot name="finished" a:if="{{ totalNum && finished}}">
+    <view class="finished">
+      <view class="line"></view>
+      <view class="text">没有更多了</view>
+      <view class="line"></view>
+    </view>
+  </slot>
+</view>

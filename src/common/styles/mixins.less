@@ -1,0 +1,84 @@
+@import './var.less';
+
+.size(@s, @rest...) {
+  .loop(@iterator: 1) when (length(@rest) >= @iterator) {
+    @property: extract(@rest, @iterator);
+    @{property}: @s - 0rpx;
+    .loop(@iterator + 1);
+  }
+  .loop(1);
+}
+
+.w(@s) {
+  .size(@s, width);
+}
+
+.h(@s) {
+  .size(@s, height);
+}
+
+.full() {
+  width: 100%;
+  height: 100%;
+}
+
+.vertical(@s, @property) {
+  .size(@s, ~'@{property}-top', ~'@{property}-bottom');
+}
+
+.horizontal(@s, @property) {
+  .size(@s, ~'@{property}-left', ~'@{property}-right');
+}
+
+.flex(@justifyContent: center, @alignItems: center, @direction: row) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justifyContent;
+  align-items: @alignItems;
+}
+
+.border(@dir: bottom, @color: @GreyLight, @width: 1rpx, @style: solid)
+  when
+  (@dir = all) {
+  border: @width @style @color;
+}
+.border(@dir: bottom, @color: @GreyLight, @width: 1rpx, @style: solid)
+  when
+  not
+  (@dir = all) {
+  border-@{dir}: @width @style @color;
+}
+
+.box() {
+  box-sizing: border-box;
+}
+
+.font(@fontSize: @F24, @color: @Black, @fontWeight: @FontBold) {
+  .size(@fontSize, font-size);
+  .font-weight(@fontWeight);
+  color: @color;
+}
+
+.font-weight(@fontWeight: @FontBold) {
+  font-weight: @fontWeight;
+}
+
+.font-number() {
+  font-family: 'AlipayNumber';
+}
+
+.bg(@color: @White) {
+  background-color: @color;
+}
+
+.text-overflow(@overflowStyle: ellipsis) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: @overflowStyle;
+}
+
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

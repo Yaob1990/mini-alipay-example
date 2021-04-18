@@ -1,0 +1,50 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": false,
+    "allowJs": false,
+    "alwaysStrict": false,
+    "declaration": false,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "lib": [
+      "ES5",
+      "ES6",
+      "ES7",
+      "DOM"
+    ],
+    "module": "ES2015",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "sourceMap": false,
+    "target": "ES2018",
+    "experimentalDecorators": true,
+    "baseUrl": "./src",
+    "paths": {
+      "/common/*": [
+        "./common/*"
+      ],
+      "/services/*": [
+        "./services/*"
+      ],
+      "/components/*": [
+        "./components/*"
+      ],
+      "/pages/*": [
+        "./pages/*"
+      ],
+    }
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "beforePreview": "npm run build && cd ./dist"
+  },
+  "miniprogramRoot": "./dist",
+  "enableAppxNg": true,
+  "enableNodeModuleBabelTransform": true,
+  "component2": true
+}

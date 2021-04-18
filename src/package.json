@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "dependencies": {
+    "dayjs": "^1.8.19",
+    "lodash": "^4.17.15",
+    "mini-ali-ui": "^1.0.5"
+  }
+}
